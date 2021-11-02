@@ -32,7 +32,7 @@ with open('credintials.yml', 'r') as f:
     credintials = yaml.load(f, Loader=yaml.FullLoader)
     db_credintials = credintials['db']
     system_pass = credintials['system_pass']['admin']
-#     email_sender = credintials['email_sender']
+    email_sender = credintials['email_sender']
 # def get_database_connection():
 #     db = mysql.connect(host = "localhost",
 #                       user = "root",
@@ -59,6 +59,22 @@ cursor, db = get_database_connection()
 
 # if 'authenticated' not in st.session_state:
 #     st.session_state.authenticated = False
+
+# cursor.execute('''CREATE TABLE  STUDENT_INFORMATION (start_date date,end_date date,NAME VARCHAR(60) NOT NULL , EMAIL VARCHAR(60) NOT NULL,INSTITUTION VARCHAR(60) NOT NULL , PHONE numeric NOT NULL , ADDRESS VARCHAR(60) NOT NULL , GENDER VARCHAR(60) NOT NULL , cgpa double,STATUS VARCHAR(60),ID int AUTO_increment,PRIMARY KEY (ID) ''')
+
+	
+# 										id int AUTO_increment PRIMARY KEY,
+#                                       name varchar(255),
+#                                       nickname varchar(255),
+#                                       email varchar(255),
+#                                       dept varchar(255),
+#                                       status varchar(255),
+#                                       joining_date date,
+#                                       account_number varchar(255),
+#                                       gross_salary int)''')
+
+
+
 					   
 def driver():
 	with st.form(key='member_form'):
